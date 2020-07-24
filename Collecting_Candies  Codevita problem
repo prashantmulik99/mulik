@@ -1,1 +1,30 @@
+import java.util.*;
+public class Collecting_Candies {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int t = sc.nextInt();
+		int b = sc.nextInt();
+		ArrayList<Integer> al = new ArrayList<Integer>();
+  		
+		for(int i =0; i<b; i++)
+		{
+			al.add(sc.nextInt());
+		}
+		Collections.sort(al);
+		int count =0;
+
+		for(int i=0; i<=(al.size()+1); i++)
+		{
+				al.add(al.get(0)+al.get(1));
+				count+= (al.get(0)+al.get(1));
+				al.remove(0);
+				al.remove(0);
+				Collections.sort(al);
+		}
+		System.out.println(count);
+	}
+}
 
